@@ -1,14 +1,31 @@
 {
   "name": "element-api-docs",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.0.0",
+  "author": "SSC",
+  "main": "lib/index.umd.min.js",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "lib": "vue-cli-service build --target lib --name ElementApiDocs --dest lib --filename index --formats umd-min ./src/components/index.js"
   },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/sscfaith/element-api-docs"
+  },
+  "keywords": [
+    "vue",
+    "element-ui",
+    "swagger2",
+    "api-docs"
+  ],
   "dependencies": {
-    "core-js": "^2.6.5",
+    "axios": "^0.19.0",
+    "element-api-docs": "^1.0.0",
+    "element-ui": "^2.12.0",
     "vue": "^2.6.10"
   },
   "devDependencies": {
@@ -44,5 +61,6 @@
   "browserslist": [
     "> 1%",
     "last 2 versions"
-  ]
+  ],
+  "license": "MIT"
 }
