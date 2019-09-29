@@ -98,7 +98,7 @@ Vue.use(ElementApiDocs)
 
 data、headers、result可通过.sync修饰符获取到实时组件内值的变化
 
-#### 若使用导出功能，请自行引入以下js
+#### 若使用导出功能，请自行引入以下js，并且加入publish文件夹下的word模板
 
 ```javascript
 <script src="https://cdnjs.cloudflare.com/ajax/libs/docxtemplater/3.9.1/docxtemplater.js"></script>
