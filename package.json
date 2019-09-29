@@ -1,6 +1,6 @@
 {
   "name": "element-api-docs",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "SSC",
   "main": "lib/index.umd.min.js",
   "scripts": {

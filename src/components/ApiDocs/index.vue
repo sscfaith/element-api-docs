@@ -428,15 +428,9 @@ export default {
         doc.setData({ api: _this.list })
 
         try {
-          doc.render();
+          doc.render()
         } catch (error) {
-          let e = {
-            message: error.message,
-            name: error.name,
-            stack: error.stack,
-            properties: error.properties
-          };
-          throw error;
+          throw error
         }
 
         let out = doc.getZip().generate({
