@@ -30,7 +30,7 @@ import ElementApiDocs from 'element-api-docs'
 Vue.use(ElementApiDocs)
 ```
 
-```
+```html
 <template>
   <el-api-docs ref="api"
                :doc-url="docUrl"
@@ -98,6 +98,15 @@ Vue.use(ElementApiDocs)
 
 data、headers、result可通过.sync修饰符获取到实时组件内值的变化
 
+#### 若使用导出功能，请自行引入以下js
+
+```javascript
+<script src="https://cdnjs.cloudflare.com/ajax/libs/docxtemplater/3.9.1/docxtemplater.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.6.1/jszip.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip-utils/0.0.2/jszip-utils.js"></script>
+```
+
 ### 事件
 
 | 名称 | 说明 | 回调参数 |
@@ -112,7 +121,7 @@ data、headers、result可通过.sync修饰符获取到实时组件内值的变�
 
 ### 插槽
 
-```
+```html
 <el-api-docs :doc-url="docUrl">
   <div slot="leftMenu">
     <el-button type="text">自定义按钮</el-button>

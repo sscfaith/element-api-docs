@@ -12,7 +12,8 @@
             <slot name="leftMenu"></slot>
             <el-button v-if="exportBtn"
                        type="text"
-                       style="margin-left: 10px;">导出</el-button>
+                       style="margin-left: 10px;"
+                       @click="handleExportWord">导出</el-button>
           </div>
         </div>
         <el-collapse class="left-body"
@@ -205,7 +206,7 @@ export default {
     },
     exportBtn: {
       type: Boolean,
-      default: true
+      default: false
     },
     data: {
       type: Array,
@@ -415,6 +416,36 @@ export default {
           resolve(pass)
         } else reject('需校验的对象为空')
       })
+    },
+    handleExportWord () {
+      let _this = this;
+      // 读取并获得模板文件的二进制内容
+      JSZipUtils.getBinaryContent("api-template.docx", function (error, content) {
+        if (error) throw error
+
+        let zip = new JSZip(content)
+        let doc = new window.docxtemplater().loadZip(zip)
+        doc.setData({ api: _this.list })
+
+        try {
+          doc.render();
+        } catch (error) {
+          let e = {
+            message: error.message,
+            name: error.name,
+            stack: error.stack,
+            properties: error.properties
+          };
+          throw error;
+        }
+
+        let out = doc.getZip().generate({
+          type: "blob",
+          mimeType:
+            "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        })
+        saveAs(out, "接口文档.docx");
+      });
     }
   },
   watch: {
