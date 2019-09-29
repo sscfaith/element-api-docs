@@ -12,6 +12,14 @@ $ npm i element-api-docs
 或
 $ yarn add element-api-docs
 ```
+如果使用导出功能，请在index.html中自行引入以下js，并且加入public文件夹下的api-template.docx模板
+
+```javascript
+<script src="https://cdnjs.cloudflare.com/ajax/libs/docxtemplater/3.9.1/docxtemplater.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.6.1/jszip.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip-utils/0.0.2/jszip-utils.js"></script>
+```
 
 ### 源码
 
@@ -24,11 +32,22 @@ $ yarn serve
 
 ## 使用
 
-```
+### 组件
+
+```html
 import ElementApiDocs from 'element-api-docs'
 
 Vue.use(ElementApiDocs)
 ```
+
+### 源码
+```html
+import ElementApiDocs from '@/components'
+
+Vue.use(ElementApiDocs)
+```
+
+---
 
 ```html
 <template>
@@ -98,7 +117,7 @@ Vue.use(ElementApiDocs)
 
 data、headers、result可通过.sync修饰符获取到实时组件内值的变化
 
-#### 若使用导出功能，请自行引入以下js，并且加入public文件夹下的word模板
+#### 若使用导出功能，请在index.html中自行引入以下js，并且加入public文件夹下的api-template.docx模板
 
 ```javascript
 <script src="https://cdnjs.cloudflare.com/ajax/libs/docxtemplater/3.9.1/docxtemplater.js"></script>
