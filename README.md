@@ -90,11 +90,11 @@ Vue.use(ElementApiDocs)
 | doc-url | swagger2接口文档地址(/v2/api-docs) | String | "" |
 | base-url | axios请求baseUrl | String | swagger2文档中的baseUrl |
 | data | 初始请求参数，格式为[{key: '', value: '', required: false}] | Array | [{}] |
-| headers | 初始请求头，格式为[{key: '', value: ''}] | Array | [{ }] |
+| headers | 初始请求头，格式为[{key: '', value: ''}] | Array | [{}] |
 | result | 返回结果预展示 | Object | { data: {}, code: 200, msg: "描述信息" } |
 | validate | 提交时是否校验参数 | Boolean | true |
 | auto-request | 提交时是否自动请求，若为false请使用@submit接受拼装好的参数，自行处理请求 | Boolean | true |
-| export-btn | 是否显示导出按钮 | Boolean | true |
+| export-btn | 是否显示导出按钮 | Boolean | false |
 
 data、headers、result可通过.sync修饰符获取到实时组件内值的变化
 
